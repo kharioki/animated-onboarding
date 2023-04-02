@@ -20,6 +20,7 @@ const RootNavigator = () => {
       <RootStack.Group 
         screenOptions={{ 
           headerShown: false,
+          animation: 'fade'
         }}
       >
         <RootStack.Screen name="IntroScreen01" component={IntroScreen01} />

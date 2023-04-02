@@ -8,6 +8,7 @@ import { INTRO_SCREEN_02 } from '../utils/constants'
 import ScreenIndicators from '../components/ScreenIndicators'
 import PrimaryButton from '../components/PrimaryButton'
 import { MaterialIcons } from '@expo/vector-icons'
+import Animated, { FadeInDown, FadeInUp } from 'react-native-reanimated'
 
 const IntroScreen02 = ({
   navigation,
@@ -15,7 +16,8 @@ const IntroScreen02 = ({
   const theme = useTheme()
   return (
     <SafeAreaView style={{ backgroundColor: theme.colors.card, flex: 1 }}>
-      <View
+      <Animated.View
+        entering={FadeInUp.duration(1000).springify()}
         style={{
           paddingHorizontal: 24,
           height: 52,
@@ -23,24 +25,40 @@ const IntroScreen02 = ({
           flexDirection: "row",
         }}
       >
-        <TouchableOpacity onPress={() => navigation.goBack()}>
+        <TouchableOpacity onPress={() => navigation.replace("IntroScreen01")}>
           <MaterialIcons name="arrow-back-ios" size={24} color={theme.colors.text} />
         </TouchableOpacity>
-      </View>
-      <View style={{ alignItems: "center", flex: 1, justifyContent: "center" }}>
+      </Animated.View>
+      <Animated.View
+        entering={FadeInUp.delay(200).duration(1000).springify()}
+        style={{ alignItems: "center", flex: 1, justifyContent: "center" }}
+      >
         <Artwork02 width={300} height={300} />
-      </View>
+      </Animated.View>
       <View style={{ padding: 24 }}>
-        <Text style={{ fontSize: 32, fontWeight: "800" }}>
+        <Animated.Text
+          entering={FadeInDown.delay(100).duration(1000).springify()}
+          style={{ fontSize: 32, fontWeight: "800" }}
+        >
           {INTRO_SCREEN_02.title}
-        </Text>
-        <Text style={{ opacity: 0.5, marginTop: 16, fontSize: 16 }}>
+        </Animated.Text>
+        <Animated.Text
+          entering={FadeInDown.delay(200).duration(1000).springify()}
+          style={{ opacity: 0.5, marginTop: 16, fontSize: 16 }}
+        >
           {INTRO_SCREEN_02.description}
-        </Text>
-        <ScreenIndicators count={2} activeIndex={1} />
-        <View style={{ alignItems: "center" }}>
-          <PrimaryButton onPress={() => navigation.navigate("LogInScreen")} label="Next" />
-        </View>
+        </Animated.Text>
+        <Animated.View
+          entering={FadeInDown.delay(300).duration(1000).springify()}
+        >
+          <ScreenIndicators count={2} activeIndex={1} />
+        </Animated.View>
+        <Animated.View
+          entering={FadeInDown.delay(400).duration(1000).springify()}
+          style={{ alignItems: "center" }}
+        >
+          <PrimaryButton onPress={() => navigation.replace("LogInScreen")} label="Next" />
+        </Animated.View>
       </View>
     </SafeAreaView>
   )
