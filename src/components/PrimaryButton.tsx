@@ -21,7 +21,7 @@ const PrimaryButton = ({ onPress, label, style, labelStyle }: {
       }, style]}
       onPress={onPress}
     >
-      <Text style={[{ fontSize: 16, fontWeight: "600", color: "#fff" }, labelStyle]}>
+      <Text style={[{ fontSize: 16, fontWeight: "600", color: theme.colors.background }, labelStyle]}>
         {label}
       </Text>
     </TouchableOpacity>

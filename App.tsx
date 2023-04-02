@@ -1,17 +1,27 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet } from 'react-native';
-import { DefaultTheme, NavigationContainer, Theme } from '@react-navigation/native';
+import { StyleSheet, useColorScheme } from 'react-native';
+import { DarkTheme, DefaultTheme, NavigationContainer, Theme } from '@react-navigation/native';
 import RootNavigator from './src/navigators/RootNavigator';
 import { SafeAreaProvider } from 'react-native-safe-area-context';
+import { useMemo } from 'react';
 
 export default function App() {
-  const theme: Theme = {
+  const colorScheme = useColorScheme();
+  const theme: Theme = useMemo(
+    () => 
+    colorScheme === 'dark' ? {
+      ...DarkTheme,
+      colors: {
+        ...DarkTheme.colors,
+        primary: '#fff'
+      }
+    } : {
     ...DefaultTheme,
     colors: {
       ...DefaultTheme.colors,
-      primary: '#000',
-    },
-  };
+      primary: '#000'
+    }
+  }, [colorScheme]);
 
   return (
     <SafeAreaProvider style={styles.container}>

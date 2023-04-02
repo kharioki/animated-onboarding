@@ -24,13 +24,13 @@ const IntroScreen01 = ({
       <View style={{ padding: 24 }}>
         <Animated.Text
           entering={FadeInDown.duration(1000).springify()}
-          style={{ fontSize: 32, fontWeight: "800" }}
+          style={{ fontSize: 32, fontWeight: "800", color: theme.colors.text }}
         >
           {INTRO_SCREEN_01.title}
         </Animated.Text>
         <Animated.Text
           entering={FadeInDown.delay(100).duration(1000).springify()}
-          style={{ opacity: 0.5, marginTop: 16, fontSize: 16 }}
+          style={{ opacity: 0.5, marginTop: 16, fontSize: 16, color: theme.colors.text }}
         >
           {INTRO_SCREEN_01.description}
         </Animated.Text>

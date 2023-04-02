@@ -46,13 +46,13 @@ const LogInScreen = ({
         <View style={{ padding: 24 }}>
           <Animated.Text
             entering={FadeInDown.delay(100).duration(1000).springify()}
-            style={{ fontSize: 32, fontWeight: "800" }}
+            style={{ fontSize: 32, fontWeight: "800", color: theme.colors.text }}
           >
             {LOG_IN_SCREEN.title}
           </Animated.Text>
           <Animated.Text
             entering={FadeInDown.delay(200).duration(1000).springify()}
-            style={{ opacity: 0.5, marginTop: 16, fontSize: 16 }}
+            style={{ opacity: 0.5, marginTop: 16, fontSize: 16, color: theme.colors.text }}
           >
             {LOG_IN_SCREEN.description}
           </Animated.Text>
