@@ -3,11 +3,13 @@ import { NativeStackScreenProps, createNativeStackNavigator } from '@react-navig
 import IntroScreen01 from '../screens/IntroScreen01';
 import IntroScreen02 from '../screens/IntroScreen02';
 import LogInScreen from '../screens/LogInScreen';
+import SignUpScreen from '../screens/SignUpScreen';
 
 export type RootStackParamList = {
   IntroScreen01: undefined;
   IntroScreen02: undefined;
   LogInScreen: undefined;
+  SignUpScreen: undefined;
 };
 
 const RootStack = createNativeStackNavigator<RootStackParamList>();
@@ -26,6 +28,7 @@ const RootNavigator = () => {
         <RootStack.Screen name="IntroScreen01" component={IntroScreen01} />
         <RootStack.Screen name="IntroScreen02" component={IntroScreen02} />
         <RootStack.Screen name="LogInScreen" component={LogInScreen} />
+        <RootStack.Screen name="SignUpScreen" component={SignUpScreen} />
       </RootStack.Group>
     </RootStack.Navigator>
   )

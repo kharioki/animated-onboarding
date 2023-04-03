@@ -9,6 +9,11 @@ export const INTRO_SCREEN_02 = {
 };
 
 export const LOG_IN_SCREEN = {
-  title: "Let's Get started",
+  title: "Go on and book your next session",
+  description: 'Welcome back, kindly enter your details to continue',
+};
+
+export const SIGN_UP_SCREEN = {
+  title: 'Create an Account',
   description: 'To register for an account, kindly enter your details',
 };
